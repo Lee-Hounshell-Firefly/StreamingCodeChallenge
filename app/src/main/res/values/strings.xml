@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Streaming Url Code Challenge</string>
+    <string name="to_id">To:&#160;&#160;&#160;&#160;</string>
+    <string name="to_name"> </string>
+    <string name="from_id">From:</string>
+    <string name="from_name"> </string>
+    <string name="timestamp">Time:</string>
+    <string name="friend">Friend:</string>
+</resources>

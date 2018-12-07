@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="view"
+            type="com.harlie.codechallenge.BaseActivity"/>
+        <variable
+            name="presenter"
+            type="com.harlie.codechallenge.viewmodel.PartyLogViewModel"/>
+        <variable
+            name="obj"
+            type="com.harlie.codechallenge.model.PartyLogItem"/>
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="@{(v) -> presenter.doClick(v, obj)}"
+        android:elevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/MyLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1.0">
+
+                <TextView
+                    style="@style/MyTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/to_id"
+                    android:gravity="start"
+                    android:layout_weight="0.8"/>
+
+                <TextView
+                    android:id="@+id/toNameAndId"
+                    style="@style/MyTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{obj.getToNameAndId()}"
+                    tools:text="Richard P. Feynman: 0123456789"
+                    android:textStyle="bold"
+                    android:gravity="end"
+                    android:layout_weight="0.2"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/MyLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1.0">
+
+                <TextView
+                    style="@style/MyTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/from_id"
+                    android:gravity="start"
+                    android:layout_weight="0.8"/>
+
+                <TextView
+                    android:id="@+id/fromNameAndId"
+                    style="@style/MyTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{obj.getFromNameAndId()}"
+                    tools:text="Murray Gell-Mann: 9876543210"
+                    android:textStyle="bold"
+                    android:gravity="end"
+                    android:layout_weight="0.2"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/MyLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1.0">
+
+                <TextView
+                    android:id="@+id/timestampTitle"
+                    style="@style/MyTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/timestamp"
+                    android:gravity="start"
+                    android:layout_weight="0.8"/>
+
+                <TextView
+                    android:id="@+id/timestamp"
+                    style="@style/MyTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{obj.getTimestamp()}"
+                    tools:text="10-Dec-1969 08:03:00"
+                    android:textStyle="bold"
+                    android:gravity="end"
+                    android:layout_weight="0.2"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/MyLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1.0">
+
+                <TextView
+                    android:id="@+id/friendTitle"
+                    style="@style/MyTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/friend"
+                    android:gravity="start"
+                    android:layout_weight="0.8"/>
+
+                <TextView
+                    android:id="@+id/friend"
+                    style="@style/MyTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{obj.getFriend()}"
+                    tools:text="yes"
+                    android:textStyle="bold"
+                    android:gravity="end"
+                    android:layout_weight="0.2"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>
